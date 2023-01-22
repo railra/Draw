@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace Draw
@@ -7,6 +8,7 @@ namespace Draw
     public partial class Form1 : Form
     {
         Field field = new Field();
+        Functions functions= new Functions();
 
         public Form1()
         {
@@ -15,8 +17,6 @@ namespace Draw
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            int middleOfFieldInHeight = field.heightField / 2;
-            int middleOfFieldInWidth = field.widthField / 2;
             Graphics graphics = pictureBox1.CreateGraphics();
             graphics.Clear(Color.White);
             Pen pen = new Pen(Color.Black, 1f);
@@ -53,51 +53,9 @@ namespace Draw
             }
             
 
-            
-
             field.Grid(graphics, pen, interval);
-
-            Point[] points = new Point[1000];
-            Point[] points2 = new Point[1000];
-            Point[] points3 = new Point[1000];
-            Point[] points4 = new Point[1000];
-            double l = 0;
-            float neg = 999 / field.cellSize;
-            double function1Right;
-            double function1Left;
-            double function2Right;
-            double function2Left;
-            for (int i = 0; i < points.Length; i++)
-            {
-                function1Right = ((2.5f * l)) * -1 - 3;
-                function1Left = (2.5f * (l - neg)) * -1 - 3;
-                points[i] = new Point((i) + middleOfFieldInWidth, (int)(function1Right * field.cellSize + middleOfFieldInHeight));
-                points2[i] = new Point((i - (1000 - field.cellSize)) + middleOfFieldInWidth, (int)(function1Left * (field.cellSize) + middleOfFieldInHeight));
-                l += (1f / field.cellSize);
-            }
-
-            double g = 0;
-            for (int i = 0; i < points.Length; i++)
-            {
-                function2Right = ((g * g - 3 * g) * -1 - 9);
-                function2Left = ((g - neg) * (g - neg) - 3 * (g - neg)) * -1 - 9;
-                points3[i] = new Point((i) + middleOfFieldInWidth, (int)(function2Right * field.cellSize + middleOfFieldInHeight));
-                points4[i] = new Point((i - (1000 - field.cellSize)) + middleOfFieldInWidth, (int)(function2Left * field.cellSize + middleOfFieldInHeight));
-                g += (1f / field.cellSize);
-            }
-
-            pen.Color = Color.Green;
-            pen.Width = 3f;
-            graphics.DrawLines(pen, points);
-            graphics.DrawLines(pen, points2);
-            pen.Color = Color.Purple;
-            graphics.DrawLines(pen, points3);
-            graphics.DrawLines(pen, points4);
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            functions.DrawFunction1(field, graphics, pen);
+            functions.DrawFunction2(field, graphics, pen);
         }
     }
 }

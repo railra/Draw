@@ -38,10 +38,10 @@
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -164,15 +164,23 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Функции:";
             // 
-            // label1
+            // button3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(64, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "y = 2.5x + 3";
+            this.button3.BackColor = System.Drawing.Color.Purple;
+            this.button3.Location = new System.Drawing.Point(6, 58);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(42, 42);
+            this.button3.TabIndex = 3;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Green;
+            this.button2.Location = new System.Drawing.Point(6, 17);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(42, 42);
+            this.button2.TabIndex = 2;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -184,23 +192,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "y = x^2+3x-9";
             // 
-            // button2
+            // label1
             // 
-            this.button2.BackColor = System.Drawing.Color.Green;
-            this.button2.Location = new System.Drawing.Point(6, 17);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 42);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Purple;
-            this.button3.Location = new System.Drawing.Point(6, 58);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(42, 42);
-            this.button3.TabIndex = 3;
-            this.button3.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(64, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(115, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "y = 2.5x + 3";
             // 
             // Form1
             // 
@@ -213,7 +213,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
